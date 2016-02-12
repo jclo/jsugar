@@ -1,5 +1,11 @@
 ### HEAD
 
+### 0.1.1 (February 12, 2016)
+
+  * Added the support of subpath for the Server URL,
+  * Updated the dependencies.
+
+
 ### 0.1.0 (January 18, 2016)
 
   * Initial build.
