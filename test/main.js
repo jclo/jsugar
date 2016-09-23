@@ -1,5 +1,5 @@
 /* global describe, it */
-/* eslint camelcase: 0 */
+/* eslint camelcase: 0, no-unused-expressions: 0 */
 
 // -- Node modules
 var expect = require('chai').expect
@@ -10,9 +10,9 @@ var sugar = require('../index.js')
   ;
 
 // -- Local constants
-var domain = 'http://ec2-54-74-149-4.eu-west-1.compute.amazonaws.com/sugarCE' //'http://sas.opacus.co.uk'
-  , user = 'demo'//'Demo'
-  , password = 'demo'//'opacus'
+var domain = 'http://ec2-54-74-149-4.eu-west-1.compute.amazonaws.com/sugarCE' // 'http://sas.opacus.co.uk'
+  , user = 'demo' // 'Demo'
+  , password = 'demo' // 'opacus'
   ;
 
 // -- Local variables
@@ -22,7 +22,6 @@ var id = ''
 // -- Main
 
 describe('Test of jsugar library:', function() {
-
   // Test access to the server:
   describe('The function getServerInfo():', function() {
     var data;
