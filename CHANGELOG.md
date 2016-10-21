@@ -1,5 +1,11 @@
 ### HEAD
 
+### 0.2.1 (October 21, 2016)
+
+  * Fixed typos in the README file,
+  * Fixed an issue with encoding special characters in the url payload.
+
+
 ### 0.2.0 (September 23, 2016)
 
   * Updated the module to comply with Airbnb's ESLint rules.

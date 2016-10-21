@@ -23,7 +23,7 @@ SugarCRM's REST API is available on a SugarCRM server at the path `http://<domai
 ```
 var jsugar = require('jsugar');
 
-var domain = 'http://www.xxxxx'   // the domain name of the server,
+var domain = 'http://www.xxxxx';   // the domain name of the server,
 
 jsugar.getServerInfo(domain, function(error, res) {
   // the server returns:
@@ -36,7 +36,7 @@ jsugar.getServerInfo(domain, function(error, res) {
 ```
 var jsugar = require('jsugar');
 
-var domain = 'http://www.xxxxx'   // the domain name of the server,
+var domain = 'http://www.xxxxx';  // the domain name of the server,
 var username = 'xxxxx';           // the account username,
 var password = 'xxxxx';           // the account password,
 
@@ -54,10 +54,10 @@ jsugar.login(domain, username, password, function(error, res) {
   jsugar.call(domain, 'get_entries_count', params, function(error, res) {
     // the server returns:
     // res = { data: { result_count: '561' } }
-  });
 
-  // Close the session:
-  jsugar.logout(domain, id);
+    // Close the session:
+    jsugar.logout(domain, id);
+  });
 });
 ```
 
