@@ -3,7 +3,7 @@
 ### 0.2.3 (February 14, 2017)
 
   * Updated the dependencies,
-  * ...,
+  * Release.
 
 
 ### 0.2.2 (December 26, 2016)
