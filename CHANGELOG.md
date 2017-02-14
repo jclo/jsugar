@@ -1,5 +1,11 @@
 ### HEAD
 
+### 0.2.3 (February 14, 2017)
+
+  * Updated the dependencies,
+  * ...,
+
+
 ### 0.2.2 (December 26, 2016)
 
   * Updated the dependencies and replaced the deprecated ghooks module by Husky.
