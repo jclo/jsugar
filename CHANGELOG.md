@@ -3,7 +3,7 @@
 ### 0.2.4 (March 31, 2017)
 
   * Improved SugarCRM REST error reporting,
-  * ...,
+  * Release.
 
 
 ### 0.2.3 (February 14, 2017)
