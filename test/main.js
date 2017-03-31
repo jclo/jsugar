@@ -99,7 +99,7 @@ describe('Test of jsugar library:', function() {
   describe('The function call():', function() {
     var data;
 
-    it('Expects the method to return an object.', function(done) {
+    it('Expects the method "get_entries_count" to return an object.', function(done) {
       var params = {
         session: id,
         module_name: 'Accounts',
@@ -122,7 +122,7 @@ describe('Test of jsugar library:', function() {
     });
 
     // Test error:
-    it('Expects the method throws an error if missing arguments.', function() {
+    it('Expects the method to throw an error if the argument "params" is missing.', function() {
       var error = false;
       try {
         sugar.call(domain, 'get_entries_count', function() {
@@ -132,6 +132,81 @@ describe('Test of jsugar library:', function() {
         error = true;
       }
       expect(error).to.be.true;
+    });
+
+    it('Expects the method "get_entry_list" to return an object.', function(done) {
+      var params = {
+        session: id,
+        module_name: 'Accounts',
+        query: '',
+        order_by: '',
+        offset: 0,
+        select_fields: ['name'],
+        link_name_to_fields_array: '',
+        max_results: 1,
+        deleted: false
+      };
+      sugar.call(domain, 'get_entry_list', params, function(error, res) {
+        data = res.data;
+        expect(data).to.be.an('object');
+        done();
+      });
+    });
+
+    it('Expects this object to contains three results.', function(done) {
+      var params = {
+        session: id,
+        module_name: 'Accounts',
+        query: '',
+        order_by: '',
+        offset: 0,
+        select_fields: ['name'],
+        link_name_to_fields_array: '',
+        max_results: 3,
+        deleted: false
+      };
+      sugar.call(domain, 'get_entry_list', params, function(error, res) {
+        data = res.data.result_count;
+        expect(data).to.be.equal(3);
+        done();
+      });
+    });
+
+    it('Expects the method "get_entry_list" to return an empty string if a param is missing.', function(done) {
+      var params = {
+        session: id,
+        module_name: 'Accounts',
+        // query: '',
+        order_by: '',
+        offset: 0,
+        select_fields: ['name'],
+        link_name_to_fields_array: '',
+        max_results: 3,
+        deleted: false
+      };
+      sugar.call(domain, 'get_entry_list', params, function(error, res) {
+        data = res.data;
+        expect(data).to.be.a('string').that.has.a.lengthOf(0);
+        done();
+      });
+    });
+
+    it('Expects the method "get_entry_list" to return an error if the params "query, order_by and offset" are missing.', function(done) {
+      var params = {
+        session: id,
+        module_name: 'Accounts',
+        // query: '',
+        // order_by: '',
+        // offset: 0,
+        select_fields: ['name'],
+        link_name_to_fields_array: '',
+        max_results: 3,
+        deleted: false
+      };
+      sugar.call(domain, 'get_entry_list', params, function(error) {
+        expect(error).to.be.a('string');
+        done();
+      });
     });
   });
 

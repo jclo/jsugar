@@ -49,11 +49,59 @@ jsugar.login(domain, username, password, function(error, res) {
     session: id,
     module_name: 'Accounts',
     query: '',
-    deleted: false
   };
   jsugar.call(domain, 'get_entries_count', params, function(error, res) {
     // the server returns:
     // res = { data: { result_count: '561' } }
+
+    // Close the session:
+    jsugar.logout(domain, id);
+  });
+});
+```
+
+### Retrieve the name of the first 20 records of 'Accounts'
+
+```
+var jsugar = require('jsugar');
+
+var domain = 'http://www.xxxxx';  // the domain name of the server,
+var username = 'xxxxx';           // the account username,
+var password = 'xxxxx';           // the account password,
+
+// Get a session ID:
+jsugar.login(domain, username, password, function(error, res) {
+  var id = res.data.id;
+
+  // Retrieve the Accounts' records
+  var params = {
+    session: id,
+    module_name: 'Accounts',
+    query: '',
+    order_by: '',
+    offset: 0,
+    select_fields: ['name'],
+    link_name_to_fields_array: [],
+    max_results: 20,
+    deleted: false,
+    favorites: false
+  };
+  jsugar.call(domain, 'get_entries_list', params, function(error, res) {
+    // the server returns:
+    // res = {
+    //   data: {
+    //     result_count: 20,
+    //     total_count: '50',
+    //     next_offset: 20,
+    //     entry_list: [
+    //       [Object],
+    //       [Object],
+    //       [Object],
+    //       ...
+    //     ],
+    //     relationship_list: []
+    //   }
+    // }
 
     // Close the session:
     jsugar.logout(domain, id);
@@ -72,7 +120,7 @@ jsugar.login(domain, username, password, function(error, res) {
   * `logout()`          closes the session.
 
 
-### getServerInfo(domain, callback)
+### getServerInfo (domain, callback)
 
 `getServerInfo` requires two arguments:
   * the domain name of the server,
@@ -87,7 +135,7 @@ The `response` object contains:
 { data: { flavor: 'CE', version: '6.5.x', gmt_time: '201x-xx-xx h:mn:s' } }
 ```
 
-### login(domain, username, password, callback)
+### login (domain, username, password, callback)
 
 `login` requires four arguments:
   * the domain name of the server,
@@ -106,7 +154,7 @@ The `response` object contains:
 
 `id` is the session ID.
 
-### getUserID(domain, id, callback)
+### getUserID (domain, id, callback)
 
 `getUserID` requires three arguments:
 * the domain name of the server,
@@ -124,7 +172,7 @@ The `response` object contains:
 
 `data`is the User ID.
 
-### call(domain, method, params, callback)
+### call (domain, method, params, callback)
 
 `call` gets four arguments:
 * the domain name of the server,

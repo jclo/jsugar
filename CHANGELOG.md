@@ -1,5 +1,11 @@
 ### HEAD
 
+### 0.2.4 (March 31, 2017)
+
+  * Improved SugarCRM REST error reporting,
+  * ...,
+
+
 ### 0.2.3 (February 14, 2017)
 
   * Updated the dependencies,
