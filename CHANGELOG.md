@@ -3,7 +3,7 @@
 ### 0.2.5 (July 12, 2018)
 
   * Updated the library to comply with ES6 syntax,
-  * ...,
+  * Release.
 
 
 ### 0.2.4 (March 31, 2017)
