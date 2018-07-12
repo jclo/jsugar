@@ -21,11 +21,11 @@ SugarCRM's REST API is available on a SugarCRM server at the path `http://<domai
 
 ### Test if the server is responding
 ```
-var jsugar = require('jsugar');
+const jsugar = require('jsugar');
 
-var domain = 'http://www.xxxxx';   // the domain name of the server,
+const domain = 'http://www.xxxxx';   // the domain name of the server,
 
-jsugar.getServerInfo(domain, function(error, res) {
+jsugar.getServerInfo(domain, (error, res) => {
   // the server returns:
   // res = { data: { flavor: 'CE', version: '6.5.x', gmt_time: '201x-xx-xx h:mn:s' } }
 });
@@ -34,23 +34,23 @@ jsugar.getServerInfo(domain, function(error, res) {
 ### Retrieve the number of records in a given module
 
 ```
-var jsugar = require('jsugar');
+const jsugar = require('jsugar');
 
-var domain = 'http://www.xxxxx';  // the domain name of the server,
-var username = 'xxxxx';           // the account username,
-var password = 'xxxxx';           // the account password,
+const domain = 'http://www.xxxxx';  // the domain name of the server,
+const username = 'xxxxx';           // the account username,
+const password = 'xxxxx';           // the account password,
 
 // Get a session ID:
-jsugar.login(domain, username, password, function(error, res) {
-  var id = res.data.id;
+jsugar.login(domain, username, password, (error, res) => {
+  const id = res.data.id;
 
   // Retrieve the number of Accounts
-  var params = {
+  const params = {
     session: id,
     module_name: 'Accounts',
     query: '',
   };
-  jsugar.call(domain, 'get_entries_count', params, function(error, res) {
+  jsugar.call(domain, 'get_entries_count', params, (error, res) => {
     // the server returns:
     // res = { data: { result_count: '561' } }
 
@@ -63,18 +63,18 @@ jsugar.login(domain, username, password, function(error, res) {
 ### Retrieve the name of the first 20 records of 'Accounts'
 
 ```
-var jsugar = require('jsugar');
+const jsugar = require('jsugar');
 
-var domain = 'http://www.xxxxx';  // the domain name of the server,
-var username = 'xxxxx';           // the account username,
-var password = 'xxxxx';           // the account password,
+const domain = 'http://www.xxxxx';  // the domain name of the server,
+const username = 'xxxxx';           // the account username,
+const password = 'xxxxx';           // the account password,
 
 // Get a session ID:
-jsugar.login(domain, username, password, function(error, res) {
-  var id = res.data.id;
+jsugar.login(domain, username, password, (error, res) => {
+  const id = res.data.id;
 
   // Retrieve the Accounts' records
-  var params = {
+  const params = {
     session: id,
     module_name: 'Accounts',
     query: '',
@@ -84,9 +84,9 @@ jsugar.login(domain, username, password, function(error, res) {
     link_name_to_fields_array: [],
     max_results: 20,
     deleted: false,
-    favorites: false
+    favorites: false,
   };
-  jsugar.call(domain, 'get_entries_list', params, function(error, res) {
+  jsugar.call(domain, 'get_entries_list', params, (error, res) => {
     // the server returns:
     // res = {
     //   data: {

@@ -1,9 +1,15 @@
 ### HEAD
 
+### 0.2.5 (July 12, 2018)
+
+  * Updated the library to comply with ES6 syntax,
+  * ...,
+
+
 ### 0.2.4 (March 31, 2017)
 
   * Improved SugarCRM REST error reporting,
-  * Release. 
+  * Release.
 
 
 ### 0.2.3 (February 14, 2017)
