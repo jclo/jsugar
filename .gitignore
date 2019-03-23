@@ -1,7 +1,8 @@
 .DS_Store
 _old
+.nyc_output
+coverage
+node_modules
+.tern-project
 test/test.js
 test/x.js
-.tern-project
-node_modules
-coverage

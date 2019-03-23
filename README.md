@@ -215,6 +215,6 @@ Enjoy!
 [download-url]: https://www.npmjs.com/package/jsugar
 [travis-url]: https://travis-ci.org/jclo/jsugar
 [coveralls-url]: https://coveralls.io/github/jclo/jsugar?branch=master
-[dependencies-url]: https://david-dm.org/jclo/jsugar#info=dependencies
-[devdependencies-url]: https://david-dm.org/jclo/jsugar#info=devDependencies
+[dependencies-url]: https://david-dm.org/jclo/jsugar
+[devdependencies-url]: https://david-dm.org/jclo/jsugar?type=dev
 [license-url]: http://opensource.org/licenses/MIT
