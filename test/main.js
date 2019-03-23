@@ -6,15 +6,18 @@
 const { expect } = require('chai')
     ;
 
+
 // -- Local modules
 const sugar = require('../index.js')
     ;
+
 
 // -- Local constants
 const domain = 'http://ec2-54-74-149-4.eu-west-1.compute.amazonaws.com/sugarCE' // 'http://sas.opacus.co.uk'
     , user = 'demo' // 'Demo'
     , password = 'demo' // 'opacus'
     ;
+
 
 // -- Local variables
 let id = ''
